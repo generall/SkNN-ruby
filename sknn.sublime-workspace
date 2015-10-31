@@ -1,0 +1,1153 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Se",
+				"SelN"
+			],
+			[
+				"Ta",
+				"Tail"
+			],
+			[
+				"T",
+				"Tail"
+			],
+			[
+				"re",
+				"retractall	(POISK1.PRO)"
+			],
+			[
+				"Tail_n",
+				"Tail_no_space"
+			],
+			[
+				"S",
+				"String"
+			],
+			[
+				"fa",
+				"fact_2"
+			],
+			[
+				"bind",
+				"binding	(data_exporter.rb)"
+			],
+			[
+				"edi",
+				"editable_doc"
+			],
+			[
+				"Cl",
+				"ClientsController"
+			],
+			[
+				"cle",
+				"clients"
+			],
+			[
+				"clie",
+				"client_id"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"b",
+				"background"
+			],
+			[
+				"clien",
+				"client"
+			],
+			[
+				"Ed",
+				"editable_doc"
+			],
+			[
+				"be",
+				"belongs_to"
+			],
+			[
+				"ver",
+				"version"
+			],
+			[
+				"cl",
+				"client"
+			],
+			[
+				"ed",
+				"ed_doc_id"
+			],
+			[
+				"doc_",
+				"doc_id"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"do",
+				"document	(editable_doc.rb)"
+			],
+			[
+				"line",
+				"line_type"
+			],
+			[
+				"su",
+				"submit_doc	(editable_docs.js.coffee)"
+			],
+			[
+				"els",
+				"else	(pack_controller.rb)"
+			],
+			[
+				"from",
+				"from_response	(editable_doc.rb)"
+			],
+			[
+				"in",
+				"inputs"
+			],
+			[
+				"to",
+				"toArray"
+			],
+			[
+				"pre",
+				"prev_html"
+			],
+			[
+				"bo",
+				"border-bottom"
+			],
+			[
+				"cli",
+				"click"
+			],
+			[
+				"con",
+				"context"
+			],
+			[
+				"d",
+				"div"
+			],
+			[
+				"set",
+				"setup_actions"
+			],
+			[
+				"sho",
+				"show_popup"
+			],
+			[
+				"to_",
+				"to_h	(clients_controller.rb)"
+			],
+			[
+				"or",
+				"orig_pos"
+			],
+			[
+				"tag",
+				"tag_pos"
+			],
+			[
+				"las",
+				"last_edited_div"
+			],
+			[
+				"ja",
+				"javascript_include_tag"
+			],
+			[
+				"bor",
+				"border-width"
+			],
+			[
+				"gsu",
+				"gsub	(clients_controller.rb)"
+			],
+			[
+				"get",
+				"get_docnum	(counter.rb)"
+			],
+			[
+				"day",
+				"days"
+			],
+			[
+				"now",
+				"now_date"
+			],
+			[
+				"Co",
+				"Counter"
+			],
+			[
+				"da",
+				"date"
+			],
+			[
+				"s",
+				"script"
+			],
+			[
+				"data",
+				"dataset"
+			],
+			[
+				"add",
+				"add_field"
+			],
+			[
+				"value",
+				"values"
+			],
+			[
+				"fin",
+				"find"
+			],
+			[
+				"pa",
+				"pack_name"
+			],
+			[
+				"C",
+				"Client"
+			],
+			[
+				"par",
+				"params"
+			],
+			[
+				"cu",
+				"current_user"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"doc",
+				"doctag	(clients_controller.rb)"
+			],
+			[
+				"l",
+				"login"
+			],
+			[
+				"fiel",
+				"field"
+			],
+			[
+				"Doc",
+				"Doctag	(doctag.rb)"
+			],
+			[
+				"pack",
+				"pack_id"
+			],
+			[
+				"clin",
+				"client"
+			],
+			[
+				"curr",
+				"current_user	(application.html.erb)"
+			],
+			[
+				"has",
+				"has_many	(user.rb)"
+			],
+			[
+				"pro",
+				"profile	(user.rb)"
+			],
+			[
+				"use",
+				"username	(application_controller.rb)"
+			],
+			[
+				"bef",
+				"before_action"
+			],
+			[
+				"pass",
+				"password	(devise.rb)"
+			],
+			[
+				"bin",
+				"binding"
+			],
+			[
+				"bi",
+				"binding	(clust.rb)"
+			],
+			[
+				"ex",
+				"expect	(model.rb)"
+			],
+			[
+				"clu",
+				"clusters"
+			],
+			[
+				"seq",
+				"seq_clust"
+			],
+			[
+				"COn",
+				"ConstantSource"
+			],
+			[
+				"ra",
+				"rand"
+			],
+			[
+				"we",
+				"weightArray"
+			],
+			[
+				"ca",
+				"cache"
+			],
+			[
+				"pi",
+				"pick_strategy	(random_wheel_pick_strategy.rb)"
+			],
+			[
+				"ev",
+				"evolve"
+			],
+			[
+				"new",
+				"new_generation_strategy	(gen_exaple.rb)"
+			],
+			[
+				"rep",
+				"representation"
+			],
+			[
+				"dis",
+				"disposition"
+			],
+			[
+				"lo",
+				"loses_count"
+			],
+			[
+				"sum",
+				"sum_weight"
+			],
+			[
+				"wei",
+				"weightedSourceArray"
+			],
+			[
+				"so",
+				"sources"
+			],
+			[
+				"clus",
+				"clust"
+			],
+			[
+				"dir",
+				"dirname"
+			],
+			[
+				"get_",
+				"get_average_sorted"
+			],
+			[
+				"full",
+				"full_measure"
+			],
+			[
+				"range",
+				"ranges"
+			],
+			[
+				"with",
+				"with_index"
+			],
+			[
+				"idx",
+				"idx1"
+			],
+			[
+				"bw",
+				"bwd_score"
+			],
+			[
+				"fwd_",
+				"fwd_score"
+			],
+			[
+				"fw",
+				"fwd_score"
+			],
+			[
+				"nw",
+				"nw_dist1"
+			],
+			[
+				"or_di",
+				"or_dist0"
+			],
+			[
+				"ran",
+				"ranges_from_borders"
+			],
+			[
+				"ful",
+				"full_measure"
+			],
+			[
+				"tr",
+				"triplet"
+			],
+			[
+				"each",
+				"each_cons"
+			],
+			[
+				"bindin",
+				"binding	(blotto_stat.rb)"
+			],
+			[
+				"me",
+				"metric"
+			],
+			[
+				"del",
+				"delta"
+			],
+			[
+				"export",
+				"export_csv"
+			],
+			[
+				"en",
+				"entity"
+			],
+			[
+				"ta",
+				"target"
+			],
+			[
+				"ent",
+				"entries	(fix_data.rb)"
+			],
+			[
+				"wiki",
+				"wiki_parser"
+			],
+			[
+				"rele",
+				"relevant_sentences	(brief.txt)"
+			],
+			[
+				"require_",
+				"require_relative	(unit.rb)"
+			],
+			[
+				"load",
+				"load_cat	(brief.txt)"
+			],
+			[
+				"ass",
+				"assert_equal	(unit.rb)"
+			],
+			[
+				"sen",
+				"sentence_parser	(tokenize.rb)"
+			],
+			[
+				"col",
+				"color"
+			],
+			[
+				"sub",
+				"subgraph"
+			],
+			[
+				"x_",
+				"x_by_lines"
+			],
+			[
+				"print",
+				"print_tree"
+			],
+			[
+				"DE",
+				"DEBUG_project"
+			],
+			[
+				"rel",
+				"rel_sent_"
+			],
+			[
+				"De",
+				"DEBUG_pipe"
+			],
+			[
+				"gr",
+				"groups"
+			],
+			[
+				"res",
+				"results"
+			],
+			[
+				"cat_",
+				"cat_set"
+			],
+			[
+				"cat",
+				"caterory"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/User/latex.sublime-build",
+					""
+				],
+				[
+					"Packages/User/latex.sublime-build",
+					"Build"
+				],
+				[
+					"Packages/User/latex.sublime-build",
+					"Show"
+				],
+				[
+					"Packages/User/latex.sublime-build",
+					"clean"
+				]
+			],
+			[
+				"Packages/User/latex.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 327.0,
+		"last_filter": "prolo",
+		"selected_items":
+		[
+			[
+				"prolo",
+				"Set Syntax: SWI-Prolog"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"co",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"cs",
+				"Set Syntax: CSS"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"coffi",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"late",
+				"Set Syntax: LaTeX"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"",
+				"Package Control: Install Package"
+			],
+			[
+				"ever",
+				"Evernote: Update Evernote Note"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"eve",
+				"Evernote: Update Evernote Note"
+			],
+			[
+				"Eve",
+				"Evernote: Update Evernote Note"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"ls",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/tmp/linal.wxm",
+		"/home/generall/Dropbox/Sci/ml/beeline_shedule.txt",
+		"/home/generall/Dropbox/bmstu/1mag/method/Методология классической науки",
+		"/home/generall/Dropbox/bmstu/1mag/method/ref2_theme.txt",
+		"/home/generall/Dropbox/bmstu/1mag/ai/prolog/for.pl",
+		"/home/generall/Dropbox/bmstu/1mag/ai/prolog/facts.pl",
+		"/home/generall/Downloads/ПрИС Лаб1_4/ПрИС Лаб1_4/Примеры Турбо Пролога/POISK1.PRO",
+		"/home/generall/Dropbox/bmstu/1mag/ai/prolog/1task.pl",
+		"/home/generall/Dropbox/bmstu/1mag/ai/prolog/myDB",
+		"/home/generall/Dropbox/bmstu/1mag/ai/prolog/text.txt",
+		"/var/tmp/kdecache-generall/krun/4588_0_test.txt",
+		"/home/generall/Dropbox/bmstu/1mag/ai/prolog/EXP_MOD.PRO",
+		"/home/generall/Dropbox/bmstu/1mag/ai/prolog/ПрИС Лаб1_4/Примеры Турбо Пролога/PRIM_5_6/FACTS.BD",
+		"/home/generall/Dropbox/bmstu/8semestr/thesis/crf/test13/crf_learn_log.txt",
+		"/home/generall/Downloads/ПрИС Лаб1_4/ПрИС Лаб1_4/Примеры Турбо Пролога/EXP_MOD.PRO",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/data_exporter.rb",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/1/conf.conf",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/3/conf.conf",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/3/опись.htm",
+		"/home/generall/Dropbox/bmstu/1mag/ai/prolog/goal.pl",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/editable_docs/show.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/docs/show.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/2/conf.conf",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/1/акт_на_оказание_услуг по поиску нанимателя.htm",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/2/акт на оказание услуг по поиску кв..htm",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/3/акт приема передачи.htm",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/3/договор коммерческого найма.htm",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/3/соглашение_к_договору найма о стоимости.htm",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/1/ДОГОВОР_на_оказание_услуг по поиску нанимателя.htm",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/editable_docs/_form.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/clients/view.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/templates/2/15/опись.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/3_to_editable.rb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/templates/2/14/ДОГОВОР на оказание услуг по поиску кв.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/public/media/style.css",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/2/ДОГОВОР на оказание услуг по поиску кв.htm",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/3/соглашение_к_договору найма о стоимости.files/header.htm",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/3/опись.files/header.htm",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/3/договор коммерческого найма.files/header.htm",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/3/акт приема передачи.files/header.htm",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/2/ДОГОВОР на оказание услуг по поиску кв.files/header.htm",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/1/ДОГОВОР_на_оказание_услуг по поиску нанимателя.files/header.htm",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/2/акт на оказание услуг по поиску кв..files/header.htm",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/1/акт_на_оказание_услуг по поиску нанимателя.files/header.htm",
+		"/home/generall/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/template_conf.conf",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/make_list.sh",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/3/files.conf",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/2/files.conf",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/BuhServer/templates/1/files.conf",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/templates/2/13/акт_на_оказание_услуг по поиску нанимателя.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/templates/2/13/ДОГОВОР_на_оказание_услуг по поиску нанимателя.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/templates/2/15/акт приема передачи.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/templates/2/15/договор коммерческого найма.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/templates/2/15/соглашение_к_договору найма о стоимости.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/templates/2/14/акт на оказание услуг по поиску кв..html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/templates/2/13/template",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/templates/html/3/16/main.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/templates/html/3/16/p1.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/templates/html/3/16/p2.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/controllers/editable_docs_controller.rb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/controllers/docs_controller.rb",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver3/BuhServer/templates/1/main.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/stylesheets/_clients.scss",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/stylesheets/editable_docs.css.scss",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/editable_docs/edit.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/layouts/application.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/layouts/void.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/editable_docs/index.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/clients/index.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/layouts/doc_view.html.erb",
+		"/home/generall/.config/sublime-text-3/Packages/BeautifyRuby/Default (Linux).sublime-keymap",
+		"/home/generall/.config/sublime-text-3/Packages/User/BeautifyRuby.sublime-settings",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/db/migrate/20150919164841_create_editable_docs.rb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/public/table.css",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/public/style.css",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/javascripts/application.js",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/javascripts/glob/editable_docs.js.coffee",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/templates/html/3/19/main.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/public/media/table.css",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/templates/html/3/16/p3.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/pack/index.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/templates/3/18/p3.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/templates/3/19/p3.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/templates/3/17/p3.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/templates/3/16/p1.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/templates/3/16/p3.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/doc_edit/doc.json.base64",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/templates/html/3/19/main.html.base64",
+		"/home/generall/.zhistory",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/stylesheets/_scaffolds.scss",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/stylesheets/scaffolds.css.scss",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/clients/edit.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/editable_docs/index.json.jbuilder",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/profiles/edit.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/profiles/_form.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/config/routes.rb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/stylesheets/global.scss",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/javascripts/menu.js.coffee.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/javascripts/glob/menu.js",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/vendor/assets/javascripts/jquery.caret.js",
+		"/usr/share/applications/sublime_text.desktop",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/javascripts/glob/main.js.coffee",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/javascripts/editable_docs.js.coffee",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/stylesheets/editable_docs.scss",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/stylesheets/application.css",
+		"/home/generall/Dropbox/work/IBQ/javabackend/AllCues.txt",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/helpers/editable_docs_helper.rb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/main/index.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/clients/create.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/config/locales/ru.yml",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/templates/doc/1/1/Договор об оказании услуг.html",
+		"/home/generall/Desktop/palette2.scss",
+		"/home/generall/Desktop/palette.scss",
+		"/home/generall/Dropbox/work/miel_mayak/temp/docs/in2.html",
+		"/home/generall/Dropbox/work/miel_mayak/temp/docs/in1.html",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/devise/sessions/new.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/devise/registrations/edit.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/temp/wheader.html",
+		"/home/generall/Dropbox/work/miel_mayak/temp/md.html",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver1/BuhServer/templates/1/Договор с эксклюзивным покупателем 2.htm",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/config.ru",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/models/cdata.rb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/devise/passwords/new.html.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/devise/_links.erb",
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/profiles/index.html.erb",
+		"/home/generall/Dropbox/Sci/ml/data_mining/hackaton/opendatasearch/indexer/data_extractors/gen_meta.rb",
+		"/home/generall/Dropbox/work/miel_mayak/miel_buchserver2/templates/template_conf.conf"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"i",
+			"выигралавойну",
+			"\\.\\.",
+			"!",
+			"\\?",
+			"\\n",
+			"!.",
+			"Select_dir",
+			").",
+			",",
+			"%data6%",
+			"cluster_desc",
+			"modify_time",
+			"resc",
+			"load_pack",
+			"import_conf",
+			"split",
+			"load_pack",
+			"icon",
+			"<span\\s*>",
+			"class=\"стиль2\"",
+			"<span\\s*>",
+			"class=\"MsoNormal\"",
+			"class=MsoNormal",
+			"<span\\s*>",
+			"<\\/span\\s*>",
+			"<span >",
+			"</o:p>",
+			"<o:p>",
+			"<o:p>&nbsp;</o:p>",
+			"style=\"[^\"]*\"",
+			"style='[^']*'",
+			"^[^<\\s]",
+			"^\\d.\\s",
+			"\\d\\.\\s",
+			"8. ",
+			"\"></",
+			"1",
+			"show",
+			"div",
+			"@client",
+			"boxer",
+			"&nbsp;",
+			"&nbsp",
+			"virtual",
+			"virt",
+			"tag_text",
+			"window.doc_id",
+			"absolute",
+			"  <%",
+			"del",
+			"div",
+			"</tr>",
+			"</td>",
+			"<td>",
+			"><%= ",
+			"        <td><%=",
+			"<td>",
+			"><%=",
+			"cdatum",
+			"id",
+			"cl",
+			"}",
+			"  ",
+			"login",
+			"pack",
+			"profile",
+			"errors",
+			"alert",
+			".",
+			"la",
+			"increase_font_size",
+			"wheel",
+			"scroll_down",
+			"scrol",
+			"sort",
+			"Lieberman",
+			"ЛИСТ",
+			"dots",
+			"points",
+			" ",
+			",",
+			"matrix",
+			"lines",
+			"cluster",
+			"cluster0",
+			"csv",
+			" ",
+			"< ",
+			"100",
+			"N",
+			"gnuplot",
+			"neighboars",
+			"neighbours",
+			"—",
+			".",
+			"generate_data",
+			"\\item",
+			"$",
+			"\\item",
+			":",
+			"}",
+			"addtocounter",
+			":",
+			"_",
+			".rb",
+			"тести",
+			"ruby",
+			"time",
+			"—",
+			".rb",
+			"hline",
+			"l",
+			"get_type",
+			"cluster",
+			"load_clusters",
+			"clus",
+			"get_categories",
+			":",
+			"—",
+			"time",
+			"-",
+			"get_top_category",
+			"get_k_subgraph",
+			"get_top_categories",
+			"calculators",
+			"Stat",
+			"Signal processing"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			".",
+			"",
+			" ",
+			"&nbsp;",
+			",",
+			" ",
+			", ",
+			"neighbors",
+			"\\\\ncalculators",
+			"\\\\nmathematicians",
+			"\\\\nmathematics",
+			"\\\\ncryptographers",
+			"\\\\nby",
+			"Programmable\\\\ncalculators",
+			"Programmable\\ncalculators",
+			" ",
+			"''",
+			"``",
+			"\\\\exp",
+			"\\exp",
+			"конференции",
+			"категории",
+			"- ",
+			"  ",
+			"классификации",
+			"my_xor",
+			" <a>\\1</a> ",
+			"<a>\\1</a>",
+			"е",
+			"и",
+			"",
+			"\"\\1\",",
+			"",
+			"\\n",
+			"",
+			"\\n",
+			"subgraph",
+			", ",
+			"",
+			"\\1</a>",
+			"GCD",
+			"\"\\1\"",
+			", ",
+			"hierarchy",
+			"\\1\\n",
+			"",
+			" I",
+			"",
+			"\\1",
+			"",
+			"\\n",
+			"document_frequency",
+			"dump",
+			"Sum",
+			"latex",
+			"",
+			".\\1",
+			"",
+			"\\t\\n",
+			" \\n",
+			"",
+			" \\n",
+			" nil ",
+			"",
+			"приори"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 163.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 317.0
+	},
+	"pinned_build_system": "Packages/User/latex.sublime-build",
+	"project": "sknn.sublime-project",
+	"replace":
+	{
+		"height": 68.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"cli",
+				"~/Dropbox/work/miel_mayak/new_docstok/docstok/app/models/client.rb"
+			],
+			[
+				"ver",
+				"~/Dropbox/work/miel_mayak/new_docstok/docstok/app/models/version.rb"
+			],
+			[
+				"pro",
+				"~/Dropbox/work/miel_mayak/new_docstok/docstok/app/models/profile.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 166.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
