@@ -19,7 +19,6 @@ module SkNN
     tagger = Tagger.new
     tagger.learn(ARGV[0])
     model = Model.load(tagger.model.dump)
-    
     binding.pry
   end
 
