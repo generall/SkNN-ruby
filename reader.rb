@@ -1,5 +1,5 @@
-#require 'rubygems'
-#require 'bundler/setup'
+require 'rubygems'
+require 'bundler/setup'
 
 require "csv"
 require "pry"
@@ -67,14 +67,15 @@ class DefaultCSVSchema < Schema
   end
   def remap(row)
     return nil if row.size == 0
+
     if !@row_size
       @row_size = row.size 
     elsif @row_size != row.size
-      
+      binding.pry
       raise "Wrong row size"
     end
     features = {}
-    row[0..-1].each.with_index do |val, index|
+    row[0..-2].each.with_index do |val, index|
       features[index] = Integer(val) rescue val
     end
     tag= Integer(row.last) rescue row.last

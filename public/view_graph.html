@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 <meta charset="utf-8">
 <style>
 
@@ -18,9 +19,27 @@
   stroke-width: 3;
 }
 
+.board_frame{
+  width: 650px ;
+  height: 500px ;
+}
+
+</style>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/js-url/url.min.js"></script>
+  <script type="text/javascript" src="js/graph.js"></script>
 </style>
 <body>
-<script src="//d3js.org/d3.v3.min.js"></script>
+
+<a class="explode" factor="2">explode 2</a>
+<a class="explode" factor="3">explode 3</a>
+<a class="explode" factor="4">explode 4</a>
+<a class="explode" factor="5">explode 5</a>
+<div class="graph"></div>
+<div class="board"><iframe class="board_frame" src="/public/view_board.html?vertex=A" ></iframe></div>
+
+
+<script src="js/d3.v3.min.js"></script>
 <script>
 
 var width = 960,
@@ -29,11 +48,11 @@ var width = 960,
 var color = d3.scale.category20();
 
 var force = d3.layout.force()
-    .charge(-120)
-    .linkDistance(100)
+    .charge(-400)
+    .linkDistance(130)
     .size([width, height]);
 
-var svg = d3.select("body").append("svg")
+var svg = d3.select(".graph").append("svg")
     .attr("width", width)
     .attr("height", height);
 
@@ -63,7 +82,10 @@ d3.json("/graph", function(error, graph) {
       .attr("class", "node")
       .attr("r", 20)
       .style("fill", function(d) { return "#A4DDED"; })
-      .on("dblclick", function(d) { return alert(d.name); })
+      .on("dblclick", function(d) {
+        window.selected_vertex = d.name;
+        return $(".board_frame").attr('src', "/public/view_board.html?vertex=" + d.name); 
+      })
       .call(force.drag);
 
   var label = svg.selectAll(".label")
@@ -79,7 +101,7 @@ d3.json("/graph", function(error, graph) {
     .text(function(d) { return d.name; })
 
   node.append("title")
-      .text(function(d) { return d.name; });
+      .text(function(d) { return d.id + ": " + d.name; });
 
 
 
@@ -89,10 +111,10 @@ d3.json("/graph", function(error, graph) {
         .attr("x2", function(d) { return d.target.x; })
         .attr("y2", function(d) { return d.target.y; });
 
-    arrow.attr("x1", function(d) { return d.source.x; })
-         .attr("y1", function(d) { return d.source.y; })
-         .attr("x2", function(d) { return d.source.x + (d.target.x - d.source.x)/3; })
-         .attr("y2", function(d) { return d.source.y + (d.target.y - d.source.y)/3; });
+    arrow.attr("x1", function(d) { return d.target.x; })
+         .attr("y1", function(d) { return d.target.y; })
+         .attr("x2", function(d) { return d.target.x + (d.source.x - d.target.x)/3; })
+         .attr("y2", function(d) { return d.target.y + (d.source.y - d.target.y)/3; });
 
     node.attr("cx", function(d) { return d.x; })
         .attr("cy", function(d) { return d.y; });
@@ -100,6 +122,12 @@ d3.json("/graph", function(error, graph) {
     label.attr("x", function(d) { return d.x; })
          .attr("y", function(d) { return d.y; });
   });
+
 });
 
+$(".explode").on("click", explode);
+
 </script>
+
+</body>
+</html>

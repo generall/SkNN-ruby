@@ -10,6 +10,7 @@ include SkNN
 
 $tagger = Tagger.new
 $tagger.learn(ARGV[0])
+#$tagger.model.cluster_loops(1)
 
 
 class SkNNView < Goliath::API
@@ -31,10 +32,31 @@ class SkNNView < Goliath::API
     case env[ 'PATH_INFO' ]
     when /\/public\/.*/
       [200, {'Content-Type' => 'text/html; charset=utf-8'}, File.read( path[1..-1] ) ]
+    when '/cluster'
+      vertex    = $tagger.model.get_vertex(env.params['vertex'])
+      centroids = env.params['centroids'] || 2
+      centroids = centroids.to_i
+      $tagger.model.cluster_loops(vertex, centroids)
+      respond_json($tagger.model.get_graph_map)
     when '/graph'
       respond_json($tagger.model.get_graph_map)
     when '/plot'
-      [200,{},"Not implemented"]
+      begin
+        if env.params['vertex']
+          seq = env.params['seq'] ? env.params['seq'].to_i : nil
+          vertex =  $tagger.model.get_vertex(env.params['vertex'])
+          schema = ($tagger.model.vertex_dataset[vertex].schema.to_a + [:vertex]).map{|x| "field_" + x.to_s }.join("\t") + "\n"
+          sc = $tagger.model.vertex_dataset[vertex].schema.to_a
+          tsv = schema + $tagger.model.vertex_dataset[vertex].enum(sc + [:vertex], seq: seq).map{|x| x.join("\t")}.join("\n")
+        else
+          n = 0
+          schema = ($tagger.model.vertex_dataset[1].schema.to_a + ["num"]).map{|x| "field_" + x.to_s }.join("\t") + "\n"
+          tsv = schema + $tagger.model.enum.map{|x| n+=1; (x + [n]).join("\t")}.join("\n")
+        end
+      rescue Exception => e
+        binding.pry
+      end
+      [200,{}, tsv ]
     end
   end
 end

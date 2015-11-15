@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"vertex_",
+				"vertex_dataset"
+			],
+			[
+				"sc",
+				"schema"
+			],
+			[
+				"fi",
+				"field"
+			],
+			[
+				"label",
+				"label_vertex_map"
+			],
+			[
 				"fill",
 				"fillOpacity	(vega_schema.js)"
 			],
@@ -94,10 +110,6 @@
 			[
 				"pro",
 				"props"
-			],
-			[
-				"vertex_",
-				"vertex_objects"
 			],
 			[
 				"row",
@@ -502,18 +514,6 @@
 			[
 				"each",
 				"each_cons"
-			],
-			[
-				"bindin",
-				"binding	(blotto_stat.rb)"
-			],
-			[
-				"del",
-				"delta"
-			],
-			[
-				"export",
-				"export_csv"
 			]
 		]
 	},
@@ -548,7 +548,7 @@
 			"file": "Gemfile",
 			"settings":
 			{
-				"buffer_size": 214,
+				"buffer_size": 228,
 				"line_ending": "Unix"
 			}
 		},
@@ -565,7 +565,7 @@
 			"file": "model.rb",
 			"settings":
 			{
-				"buffer_size": 3565,
+				"buffer_size": 4550,
 				"line_ending": "Unix"
 			}
 		},
@@ -581,24 +581,24 @@
 			"file": "goliath.rb",
 			"settings":
 			{
-				"buffer_size": 1050,
+				"buffer_size": 1395,
 				"line_ending": "Unix",
 				"name": "#require 'rubygems'"
-			}
-		},
-		{
-			"file": "public/js/vega_schema.js",
-			"settings":
-			{
-				"buffer_size": 4437,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "public/view_graph.html",
 			"settings":
 			{
-				"buffer_size": 2474,
+				"buffer_size": 2864,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/view_board.html",
+			"settings":
+			{
+				"buffer_size": 3347,
 				"line_ending": "Unix"
 			}
 		},
@@ -745,6 +745,7 @@
 	],
 	"file_history":
 	[
+		"/home/generall/Dropbox/Sci/ml/SkNN/public/js/vega_schema.js",
 		"/home/generall/Dropbox/Sci/ml/SkNN/pen.csv",
 		"/home/generall/Dropbox/Sci/ml/SkNN/tagger.rb",
 		"/home/generall/Dropbox/Sci/ml/Distance-Measures/lib/distance_measures/tanimoto_coefficient.rb",
@@ -871,8 +872,7 @@
 		"/home/generall/Dropbox/work/IBQ/javabackend/AllCues.txt",
 		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/helpers/editable_docs_helper.rb",
 		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/main/index.html.erb",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/clients/create.html.erb",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/config/locales/ru.yml"
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/clients/create.html.erb"
 	],
 	"find":
 	{
@@ -891,6 +891,9 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"field_2",
+			"}\n",
+			"species",
 			"vertex_label_map",
 			"edge_dataset",
 			"4$",
@@ -1015,10 +1018,7 @@
 			"l",
 			"get_type",
 			"cluster",
-			"load_clusters",
-			"clus",
-			"get_categories",
-			":"
+			"load_clusters"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1104,7 +1104,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1133,7 +1133,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1197,7 +1197,7 @@
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1206,15 +1206,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 214,
+						"buffer_size": 228,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								29,
-								29
+								228,
+								228
 							]
 						],
 						"settings":
@@ -1225,7 +1225,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1241,8 +1241,8 @@
 						"selection":
 						[
 							[
-								352,
-								352
+								923,
+								923
 							]
 						],
 						"settings":
@@ -1252,11 +1252,11 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 316.0,
+						"translation.x": -0.0,
+						"translation.y": 405.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1265,28 +1265,28 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3565,
+						"buffer_size": 4550,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1640,
-								1640
+								2235,
+								2235
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"tab_size": null,
+							"translate_tabs_to_spaces": null
 						},
 						"translation.x": 0.0,
-						"translation.y": 585.0,
+						"translation.y": 675.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1302,8 +1302,8 @@
 						"selection":
 						[
 							[
-								321,
-								321
+								349,
+								349
 							]
 						],
 						"settings":
@@ -1316,7 +1316,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1325,15 +1325,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1050,
+						"buffer_size": 1395,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								599,
-								599
+								838,
+								838
 							]
 						],
 						"settings":
@@ -1347,29 +1347,29 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 8,
-					"file": "public/js/vega_schema.js",
+					"file": "public/view_graph.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4437,
+						"buffer_size": 2864,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1059,
-								1059
+								1897,
+								1897
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -1382,19 +1382,19 @@
 				},
 				{
 					"buffer": 9,
-					"file": "public/view_graph.html",
+					"file": "public/view_board.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2474,
+						"buffer_size": 3347,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1634,
-								1634
+								3148,
+								3148
 							]
 						],
 						"settings":
@@ -1404,10 +1404,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 990.0,
+						"translation.y": 1125.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1470,7 +1470,7 @@
 		"cols":
 		[
 			0.0,
-			0.286202964652,
+			0.142531356898,
 			1.0
 		],
 		"rows":
@@ -1496,7 +1496,7 @@
 	"project": "sknn.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":
