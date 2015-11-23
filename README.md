@@ -1,5 +1,6 @@
 # SkNN-ruby
-Structured kNN algorithm implementation in ruby
+Structured kNN algorithm implementation in ruby.
+
 SkNN is an algorithm for sequence tagging or classification.
 # Usage
 ## install dependencies
