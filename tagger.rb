@@ -120,8 +120,10 @@ module SkNN
 
       nodes = @model.vertex_dataset.keys.sort
 
-      nodes[1..-1].each do |vertex|
-        @model.cluster_loops(vertex , centroids)
+      if centroids
+        nodes[1..-1].each do |vertex|
+          @model.cluster_loops(vertex , centroids)
+        end
       end
 
       dump = @model.dump
@@ -141,7 +143,7 @@ module SkNN
 
 
       td.data.map do |num, td_seq|
-        tag(td_seq).first
+        tag(td_seq)
       end
 
     end

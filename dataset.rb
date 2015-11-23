@@ -92,6 +92,7 @@ module SkNN
           n += 1;
         end
       end
+      @data[n] = sequence
     end
 
   end
