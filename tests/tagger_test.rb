@@ -10,13 +10,13 @@ class ReaderTest < Test::Unit::TestCase
     @tagger = Tagger.new
     @tagger.learn("../data/pen.csv")
     model = @tagger.model
+    @tagger.model.graph.render
     model.cluster_loops(2) # cluster A
     model.cluster_loops(3) # cluster B
   end
 
   def data
     [
-      :init,
       [ 544, 1017 ],
       [ 578, 969  ],
       [ 596, 921  ],
@@ -43,15 +43,16 @@ class ReaderTest < Test::Unit::TestCase
       [ 720, 1200 ],
       [ 802, 1286 ],
       [ 894, 1339 ],
-      [ 999, 1351 ],
-      :end
+      [ 999, 1351 ]
     ]
   end
   # def teardown
   # end
 
   def test_csv
-    v = @tagger.viretbi(data)
-    binding.pry
+    tags = @tagger.tag(data)
+    assert_equal(data.size, tags.size)
+
+    assert_equal(tags[0],  "A")
   end
 end

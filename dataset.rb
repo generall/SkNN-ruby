@@ -49,6 +49,7 @@ module SkNN
       @vertex_objects[vertex].push so
       @sequence_objects[seq].push so
       @objects.push so
+      so
     end
   end
 
@@ -67,6 +68,32 @@ module SkNN
       end
       @@last = self
     end
+
+    def inspect()
+      return @props.to_s
+    end
+  end
+
+  class TargetData
+
+    attr_accessor :data
+
+    def initialize(fname)
+      reader = CSVReader.new(fname, TestCSVSchema.new)
+      @data = {}
+      n = 0
+      sequence = []
+      reader.read_stream.each do |row|
+        if row
+          sequence << row
+        else
+          @data[n] = sequence
+          sequence = []
+          n += 1;
+        end
+      end
+    end
+
   end
 
   if __FILE__ == $PROGRAM_NAME

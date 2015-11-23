@@ -35,7 +35,7 @@ module SkNN
 
   # Model class
   class Model
-    attr_accessor :label_vertex_map ,:output_vertex_map, :vertex_output_map ,:vertex_dataset ,:graph ,:curr_vertex ,:seq_n
+    attr_accessor :label_vertex_map ,:output_vertex_map, :vertex_output_map ,:vertex_dataset ,:graph ,:curr_vertex ,:seq_n, :seq_objects
 
 
     def dump()
@@ -43,6 +43,7 @@ module SkNN
       @output_vertex_map.default_proc = nil
       @vertex_output_map.default_proc = nil
       @vertex_dataset.default_proc = nil
+      @seq_objects.default_proc = nil
       @vertex_dataset.values.each {|ds| ds.remove_default_proc!}
       return Marshal.dump(self)
     end
@@ -53,16 +54,17 @@ module SkNN
 
     def initialize
       @label_vertex_map = Hash.new { |hash, key| hash[key] = hash.size }
-
       @output_vertex_map = Hash.new { |hash, key| hash[key] = Set.new }
       @vertex_output_map = Hash.new { |hash, key| hash[key] = Set.new }
-
       @vertex_dataset = Hash.new { |hash, key| hash[key] = Dataset.new }
+      @seq_objects = Hash.new { |hash, key| hash[key] = Array.new }
       @graph = ModelGraph.new
+
       @graph.graph.add_vertex(0)
       @graph.graph.add_vertex(1)
       @label_vertex_map[:end]
       @label_vertex_map[:init]
+      @vertex_output_map[:init]
       @curr_vertex = 1
       @seq_n = 0
     end
@@ -139,6 +141,7 @@ module SkNN
         @label_vertex_map[cl_label] = cl_vertex
         output.each do |tag|
           @output_vertex_map[tag].add cl_vertex
+          @vertex_output_map[cl_vertex].add tag
         end
         @vertex_output_map[vertex] = output
         vertices.push cl_vertex
@@ -199,6 +202,7 @@ module SkNN
       @curr_vertex = 1
       CSVReader.new(fname).read_stream.each { |x| process_row(x) }
       @curr_vertex = 1
+      @seq_n += 1
     end
 
     def process_row(row)
@@ -219,7 +223,8 @@ module SkNN
         @vertex_output_map[vertex].add tag
 
         @graph.add_edge(@curr_vertex, vertex)
-        @vertex_dataset[@curr_vertex].add_obj(vertex, tag, values, @seq_n)
+        obj = @vertex_dataset[@curr_vertex].add_obj(vertex, tag, values, @seq_n)
+        @seq_objects[@seq_n].push obj
         @curr_vertex = vertex
       end
     end

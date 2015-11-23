@@ -59,6 +59,9 @@ end
 class Schema
   def initialize
   end
+  def remap(row)
+    return row
+  end
 end
 
 class DefaultCSVSchema < Schema
@@ -81,4 +84,28 @@ class DefaultCSVSchema < Schema
     tag= Integer(row.last) rescue row.last
     res = {:tag => tag, :features => features}
   end
+end
+
+
+class TestCSVSchema < Schema
+  def initialize
+    @row_size = nil
+  end
+
+  def remap(row)
+    return nil if row.size == 0
+
+    if !@row_size
+      @row_size = row.size 
+    elsif @row_size != row.size
+      binding.pry
+      raise "Wrong row size"
+    end
+
+    row.map do |val|
+      Integer(val) rescue val
+    end
+    
+  end
+
 end

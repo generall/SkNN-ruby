@@ -4,16 +4,160 @@
 		"selected_items":
 		[
 			[
-				"vertex_",
-				"vertex_dataset"
+				"fis",
+				"first"
 			],
 			[
-				"sc",
-				"schema"
+				"rea",
+				"read	(reader.rb)"
+			],
+			[
+				"model",
+				"model_file"
+			],
+			[
+				"v",
+				"vertices"
+			],
+			[
+				"clus",
+				"cluster_loops(1"
+			],
+			[
+				"tagg",
+				"tagger"
 			],
 			[
 				"fi",
-				"field"
+				"first	(reader_test.rb)"
+			],
+			[
+				"ver",
+				"vertex	(model.rb)"
+			],
+			[
+				"seq",
+				"seq_n"
+			],
+			[
+				"min",
+				"min_value"
+			],
+			[
+				"max",
+				"max_value"
+			],
+			[
+				"sc",
+				"schema	(reader.rb)"
+			],
+			[
+				"re",
+				"require	(reader_test.rb)"
+			],
+			[
+				"att",
+				"attr_accessor"
+			],
+			[
+				"near",
+				"nearest"
+			],
+			[
+				"vert",
+				"vertices"
+			],
+			[
+				"vertex_",
+				"vertex_objects	(model.rb)"
+			],
+			[
+				"cu",
+				"curr_node"
+			],
+			[
+				"la",
+				"layer"
+			],
+			[
+				"curr",
+				"curr_path"
+			],
+			[
+				"next",
+				"next_vertex"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"acc",
+				"accesible_vertecies"
+			],
+			[
+				"to",
+				"to_i"
+			],
+			[
+				"ob",
+				"objects"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"Enu",
+				"Enumerator	(dataset.rb)"
+			],
+			[
+				"sele",
+				"selector"
+			],
+			[
+				"labe",
+				"label_vertex_map"
+			],
+			[
+				"add",
+				"add_vertex"
+			],
+			[
+				"cl_",
+				"cl_vertex"
+			],
+			[
+				"da",
+				"datasets"
+			],
+			[
+				"pre",
+				"prev_vertex"
+			],
+			[
+				"in",
+				"include"
+			],
+			[
+				"clu",
+				"cluster_loops	(model.rb)"
+			],
+			[
+				"cl",
+				"cl_vertex"
+			],
+			[
+				"eac",
+				"each"
+			],
+			[
+				"vertex_o",
+				"vertex_output_map"
+			],
+			[
+				"rev",
+				"rev_graph"
 			],
 			[
 				"label",
@@ -28,20 +172,8 @@
 				"align	(vega_schema.js)"
 			],
 			[
-				"att",
-				"attr"
-			],
-			[
-				"sele",
-				"selectAll"
-			],
-			[
 				"res",
 				"respond_json"
-			],
-			[
-				"req",
-				"require"
 			],
 			[
 				"me",
@@ -50,14 +182,6 @@
 			[
 				"set",
 				"set_param"
-			],
-			[
-				"la",
-				"lambda"
-			],
-			[
-				"ver",
-				"vertex"
 			],
 			[
 				"ve",
@@ -104,20 +228,12 @@
 				"values"
 			],
 			[
-				"add",
-				"add_obj"
-			],
-			[
 				"pro",
 				"props"
 			],
 			[
 				"row",
 				"row_size"
-			],
-			[
-				"seq",
-				"seq_n"
 			],
 			[
 				"Mode",
@@ -138,10 +254,6 @@
 			[
 				"T",
 				"Tail"
-			],
-			[
-				"re",
-				"retractall	(POISK1.PRO)"
 			],
 			[
 				"Tail_n",
@@ -196,10 +308,6 @@
 				"belongs_to"
 			],
 			[
-				"cl",
-				"client"
-			],
-			[
 				"ed",
 				"ed_doc_id"
 			],
@@ -230,18 +338,6 @@
 			[
 				"from",
 				"from_response	(editable_doc.rb)"
-			],
-			[
-				"in",
-				"inputs"
-			],
-			[
-				"to",
-				"toArray"
-			],
-			[
-				"pre",
-				"prev_html"
 			],
 			[
 				"bo",
@@ -308,10 +404,6 @@
 				"Counter"
 			],
 			[
-				"da",
-				"date"
-			],
-			[
 				"s",
 				"script"
 			],
@@ -338,10 +430,6 @@
 			[
 				"par",
 				"params"
-			],
-			[
-				"cu",
-				"current_user"
 			],
 			[
 				"user",
@@ -372,10 +460,6 @@
 				"client"
 			],
 			[
-				"curr",
-				"current_user	(application.html.erb)"
-			],
-			[
 				"use",
 				"username	(application_controller.rb)"
 			],
@@ -398,10 +482,6 @@
 			[
 				"ex",
 				"expect	(model.rb)"
-			],
-			[
-				"clu",
-				"clusters"
 			],
 			[
 				"COn",
@@ -434,86 +514,6 @@
 			[
 				"rep",
 				"representation"
-			],
-			[
-				"dis",
-				"disposition"
-			],
-			[
-				"sum",
-				"sum_weight"
-			],
-			[
-				"wei",
-				"weightedSourceArray"
-			],
-			[
-				"so",
-				"sources"
-			],
-			[
-				"clus",
-				"clust"
-			],
-			[
-				"dir",
-				"dirname"
-			],
-			[
-				"get_",
-				"get_average_sorted"
-			],
-			[
-				"full",
-				"full_measure"
-			],
-			[
-				"range",
-				"ranges"
-			],
-			[
-				"with",
-				"with_index"
-			],
-			[
-				"idx",
-				"idx1"
-			],
-			[
-				"bw",
-				"bwd_score"
-			],
-			[
-				"fwd_",
-				"fwd_score"
-			],
-			[
-				"fw",
-				"fwd_score"
-			],
-			[
-				"nw",
-				"nw_dist1"
-			],
-			[
-				"or_di",
-				"or_dist0"
-			],
-			[
-				"ran",
-				"ranges_from_borders"
-			],
-			[
-				"ful",
-				"full_measure"
-			],
-			[
-				"tr",
-				"triplet"
-			],
-			[
-				"each",
-				"each_cons"
 			]
 		]
 	},
@@ -523,7 +523,15 @@
 			"file": "Plan",
 			"settings":
 			{
-				"buffer_size": 710,
+				"buffer_size": 1470,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/generall/sources/timbl/timbl-6.4.5/src/Timbl.cxx",
+			"settings":
+			{
+				"buffer_size": 27279,
 				"line_ending": "Unix"
 			}
 		},
@@ -545,10 +553,10 @@
 			}
 		},
 		{
-			"file": "Gemfile",
+			"file": "tests/tagger_test.rb",
 			"settings":
 			{
-				"buffer_size": 228,
+				"buffer_size": 1085,
 				"line_ending": "Unix"
 			}
 		},
@@ -556,7 +564,7 @@
 			"file": "reader.rb",
 			"settings":
 			{
-				"buffer_size": 1322,
+				"buffer_size": 1704,
 				"line_ending": "Unix",
 				"name": "class Reader"
 			}
@@ -565,7 +573,7 @@
 			"file": "model.rb",
 			"settings":
 			{
-				"buffer_size": 4550,
+				"buffer_size": 6225,
 				"line_ending": "Unix"
 			}
 		},
@@ -573,7 +581,23 @@
 			"file": "tagger.rb",
 			"settings":
 			{
-				"buffer_size": 349,
+				"buffer_size": 4383,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dataset.rb",
+			"settings":
+			{
+				"buffer_size": 2182,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "preprocessor.rb",
+			"settings":
+			{
+				"buffer_size": 1029,
 				"line_ending": "Unix"
 			}
 		},
@@ -581,16 +605,31 @@
 			"file": "goliath.rb",
 			"settings":
 			{
-				"buffer_size": 1395,
-				"line_ending": "Unix",
-				"name": "#require 'rubygems'"
+				"buffer_size": 2826,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/view_solution.html",
+			"settings":
+			{
+				"buffer_size": 4991,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data/pen_test.csv",
+			"settings":
+			{
+				"buffer_size": 853,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "public/view_graph.html",
 			"settings":
 			{
-				"buffer_size": 2864,
+				"buffer_size": 3219,
 				"line_ending": "Unix"
 			}
 		},
@@ -598,7 +637,15 @@
 			"file": "public/view_board.html",
 			"settings":
 			{
-				"buffer_size": 3347,
+				"buffer_size": 4666,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/js/graph.js",
+			"settings":
+			{
+				"buffer_size": 167,
 				"line_ending": "Unix"
 			}
 		},
@@ -607,6 +654,14 @@
 			"settings":
 			{
 				"buffer_size": 261,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Gemfile",
+			"settings":
+			{
+				"buffer_size": 306,
 				"line_ending": "Unix"
 			}
 		}
@@ -745,16 +800,37 @@
 	],
 	"file_history":
 	[
+		"/home/generall/Dropbox/Sci/ml/SkNN/dataset.rb",
+		"/home/generall/Dropbox/Sci/ml/SkNN/model.dat",
+		"/home/generall/Dropbox/Sci/ml/SkNN/tagger.rb",
+		"/home/generall/Dropbox/Sci/ml/SkNN/estimate.rb",
+		"/home/generall/Dropbox/Sci/ml/SkNN/data/pen.csv",
+		"/home/generall/Dropbox/Sci/ml/data_mining/hackaton3/hackathon2/html/newIndex.html",
+		"/home/generall/Dropbox/Sci/ml/beeline_shedule.txt",
+		"/home/generall/idea-IC-143.381.42/license/kryo-license.txt",
+		"/home/generall/.config/sublime-text-3/Packages/BeautifyRuby/Default (Linux).sublime-keymap",
+		"/home/generall/.config/sublime-text-3/Packages/Emmet/Default (Linux).sublime-keymap",
+		"/home/generall/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/generall/.config/sublime-text-3/Packages/User/Pretty JSON.sublime-settings",
+		"/home/generall/.config/sublime-text-3/Packages/BeautifyRuby/Default (OSX).sublime-keymap",
+		"/home/generall/.config/sublime-text-3/Packages/BeautifyRuby/BeautifyRuby.sublime-settings",
+		"/home/generall/.config/sublime-text-3/Packages/User/BeautifyRuby.sublime-settings",
+		"/home/generall/Dropbox/Sci/ml/SkNN/data/pen_A.csv",
+		"/home/generall/Dropbox/Sci/ml/SkNN/goliath.rb",
+		"/home/generall/Dropbox/Sci/ml/SkNN/Gemfile",
+		"/home/generall/Dropbox/Sci/ml/SkNN/public/view_board.html",
+		"/home/generall/Dropbox/Sci/ml/SkNN/proc_caller.rb",
+		"/tmp/tracker.py",
+		"/usr/share/applications/sublime_text.desktop",
+		"/tmp/main.js",
+		"/usr/share/applications/kde4/krusader.desktop",
 		"/home/generall/Dropbox/Sci/ml/SkNN/public/js/vega_schema.js",
 		"/home/generall/Dropbox/Sci/ml/SkNN/pen.csv",
-		"/home/generall/Dropbox/Sci/ml/SkNN/tagger.rb",
 		"/home/generall/Dropbox/Sci/ml/Distance-Measures/lib/distance_measures/tanimoto_coefficient.rb",
 		"/home/generall/Dropbox/Sci/ml/Distance-Measures/spec/distance_measures_spec.rb",
 		"/home/generall/Dropbox/Sci/ml/Distance-Measures/lib/distance_measures/euclidean_distance.bundle",
 		"/home/generall/data/signs/waleed4/boy0.sign",
 		"/home/generall/Dropbox/Sci/ml/SkNN/graph.jpg",
-		"/home/generall/.config/sublime-text-3/Packages/BeautifyRuby/BeautifyRuby.sublime-settings",
-		"/home/generall/.config/sublime-text-3/Packages/BeautifyRuby/Default (Linux).sublime-keymap",
 		"/home/generall/Dropbox/Sci/ml/data_mining/hackaton#2/cutom_csv_reader.rb",
 		"/home/generall/Dropbox/bmstu/8semestr/thesis/wiki_parser/hierarchy/get_cat_path.rb",
 		"/home/generall/Dropbox/bmstu/8semestr/thesis/wiki_parser/synonyms/cluts_syn.rb",
@@ -763,10 +839,8 @@
 		"/home/generall/Dropbox/code/game/resources/svg_parser.rb",
 		"/home/generall/Dropbox/code/game/resources/Gemfile",
 		"/home/generall/Dropbox/Sci/ml/SkNN/Plan",
-		"/home/generall/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 		"/home/generall/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
 		"/tmp/linal.wxm",
-		"/home/generall/Dropbox/Sci/ml/beeline_shedule.txt",
 		"/home/generall/Dropbox/bmstu/1mag/method/Методология классической науки",
 		"/home/generall/Dropbox/bmstu/1mag/method/ref2_theme.txt",
 		"/home/generall/Dropbox/bmstu/1mag/ai/prolog/for.pl",
@@ -835,7 +909,6 @@
 		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/editable_docs/index.html.erb",
 		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/clients/index.html.erb",
 		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/layouts/doc_view.html.erb",
-		"/home/generall/.config/sublime-text-3/Packages/User/BeautifyRuby.sublime-settings",
 		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/db/migrate/20150919164841_create_editable_docs.rb",
 		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/public/table.css",
 		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/public/style.css",
@@ -854,25 +927,7 @@
 		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/templates/html/3/19/main.html.base64",
 		"/home/generall/.zhistory",
 		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/stylesheets/_scaffolds.scss",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/stylesheets/scaffolds.css.scss",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/clients/edit.html.erb",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/editable_docs/index.json.jbuilder",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/profiles/edit.html.erb",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/profiles/_form.html.erb",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/config/routes.rb",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/stylesheets/global.scss",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/javascripts/menu.js.coffee.erb",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/javascripts/glob/menu.js",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/vendor/assets/javascripts/jquery.caret.js",
-		"/usr/share/applications/sublime_text.desktop",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/javascripts/glob/main.js.coffee",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/javascripts/editable_docs.js.coffee",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/stylesheets/editable_docs.scss",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/stylesheets/application.css",
-		"/home/generall/Dropbox/work/IBQ/javabackend/AllCues.txt",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/helpers/editable_docs_helper.rb",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/main/index.html.erb",
-		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/views/clients/create.html.erb"
+		"/home/generall/Dropbox/work/miel_mayak/new_docstok/docstok/app/assets/stylesheets/scaffolds.css.scss"
 	],
 	"find":
 	{
@@ -891,6 +946,33 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"tagger",
+			"TargetData",
+			"sequence_objects",
+			":end",
+			"adj_vert",
+			"graph",
+			"graph.graph",
+			"rev_graph",
+			"sequense",
+			"521",
+			"add_obj",
+			":init",
+			":end",
+			"end",
+			"^\\s",
+			"process_row",
+			"remap",
+			"CSVReader",
+			"add_obj",
+			"target",
+			"add_edge",
+			"rev_graph",
+			"next",
+			"label_vertex_map",
+			"vertex_values",
+			"enum",
+			"vertex_values",
 			"field_2",
 			"}\n",
 			"species",
@@ -991,34 +1073,7 @@
 			"cluster0",
 			"csv",
 			" ",
-			"< ",
-			"100",
-			"N",
-			"gnuplot",
-			"neighboars",
-			"neighbours",
-			"—",
-			".",
-			"generate_data",
-			"\\item",
-			"$",
-			"\\item",
-			":",
-			"}",
-			"addtocounter",
-			":",
-			"_",
-			".rb",
-			"тести",
-			"ruby",
-			"time",
-			"—",
-			".rb",
-			"hline",
-			"l",
-			"get_type",
-			"cluster",
-			"load_clusters"
+			"< "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1113,15 +1168,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 710,
+						"buffer_size": 1470,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								128,
-								128
+								723,
+								723
 							]
 						],
 						"settings":
@@ -1133,11 +1188,41 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "/home/generall/sources/timbl/timbl-6.4.5/src/Timbl.cxx",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 27279,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 11610.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "data/test.csv",
 					"semi_transient": false,
 					"settings":
@@ -1149,8 +1234,314 @@
 						"selection":
 						[
 							[
-								392,
-								392
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 43.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "tests/reader_test.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 310,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								147,
+								147
+							]
+						],
+						"settings":
+						{
+							"auto_name": "require 'test/unit'",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 15,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "tests/tagger_test.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1085,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								932,
+								932
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "reader.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1704,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								667,
+								667
+							]
+						],
+						"settings":
+						{
+							"auto_name": "class Reader",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "model.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6225,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1796,
+								1796
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 630.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "tagger.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4383,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3653,
+								3653
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2025.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "dataset.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2182,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1692,
+								1692
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 810.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "preprocessor.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1029,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								73,
+								73
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 15.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "goliath.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2826,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1715,
+								1715
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 405.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "public/view_solution.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4991,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2874,
+								2874
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1311.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "data/pen_test.csv",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 853,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1165,206 +1556,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "tests/reader_test.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 310,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								299,
-								299
-							]
-						],
-						"settings":
-						{
-							"auto_name": "require 'test/unit'",
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 2,
-			"sheets":
-			[
-				{
-					"buffer": 3,
-					"file": "Gemfile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 228,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								228,
-								228
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "reader.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1322,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								923,
-								923
-							]
-						],
-						"settings":
-						{
-							"auto_name": "class Reader",
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 405.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "model.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4550,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2235,
-								2235
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": null,
-							"translate_tabs_to_spaces": null
-						},
-						"translation.x": 0.0,
-						"translation.y": 675.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "tagger.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 349,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								349,
-								349
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "goliath.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1395,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								838,
-								838
-							]
-						],
-						"settings":
-						{
-							"auto_name": "#require 'rubygems'",
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
+					"buffer": 13,
 					"file": "public/view_graph.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2864,
+						"buffer_size": 3219,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1897,
-								1897
+								1128,
+								1128
 							]
 						],
 						"settings":
@@ -1372,46 +1577,74 @@
 							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 261.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "public/view_board.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4666,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								249,
+								249
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2430.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "public/js/graph.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 167,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								95,
+								95
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
-					"file": "public/view_board.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3347,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3148,
-								3148
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1125.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
+					"buffer": 16,
 					"file": "proc_caller.rb",
 					"semi_transient": false,
 					"settings":
@@ -1423,8 +1656,8 @@
 						"selection":
 						[
 							[
-								153,
-								153
+								261,
+								261
 							]
 						],
 						"settings":
@@ -1436,7 +1669,35 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "Gemfile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 306,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								109,
+								109
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
@@ -1470,7 +1731,7 @@
 		"cols":
 		[
 			0.0,
-			0.142531356898,
+			0.416191562143,
 			1.0
 		],
 		"rows":
@@ -1538,7 +1799,7 @@
 		],
 		"width": 392.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},

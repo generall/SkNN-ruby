@@ -9,7 +9,25 @@ require_relative 'tagger.rb'
 include SkNN
 
 $tagger = Tagger.new
-$tagger.learn(ARGV[0])
+ARGV.each do |fname|
+  $tagger.learn(fname)
+end
+
+pp = Preproc.new
+pp.seq_normalization($tagger.model)
+
+$tagger.model.cluster_loops(2 , 5)
+$tagger.model.cluster_loops(3 , 5)
+$tagger.model.cluster_loops(4 , 5)
+$tagger.model.cluster_loops(5 , 5)
+$tagger.model.cluster_loops(6 , 5)
+$tagger.model.cluster_loops(7 , 5)
+$tagger.model.cluster_loops(8 , 5)
+$tagger.model.cluster_loops(9 , 5)
+$tagger.model.cluster_loops(10, 5)
+$tagger.model.cluster_loops(11, 5)
+
+#binding.pry
 #$tagger.model.cluster_loops(1)
 
 
@@ -40,6 +58,13 @@ class SkNNView < Goliath::API
       respond_json($tagger.model.get_graph_map)
     when '/graph'
       respond_json($tagger.model.get_graph_map)
+    when '/tag'
+      td = TargetData.new("data/pen_test.csv")
+      data = td.data[1]
+      v, vertices, nearest = $tagger.tagg(data)
+      closest = nearest[1..-2].map{|obj| obj.props}
+      res = data.zip(closest)
+      respond_json(res)
     when '/plot'
       begin
         if env.params['vertex']
