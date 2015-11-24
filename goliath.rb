@@ -16,16 +16,16 @@ end
 pp = Preproc.new
 pp.seq_normalization($tagger.model)
 
-$tagger.model.cluster_loops(2 , 5)
-$tagger.model.cluster_loops(3 , 5)
-$tagger.model.cluster_loops(4 , 5)
-$tagger.model.cluster_loops(5 , 5)
-$tagger.model.cluster_loops(6 , 5)
-$tagger.model.cluster_loops(7 , 5)
-$tagger.model.cluster_loops(8 , 5)
-$tagger.model.cluster_loops(9 , 5)
-$tagger.model.cluster_loops(10, 5)
-$tagger.model.cluster_loops(11, 5)
+#$tagger.model.cluster_loops(2 , 5)
+#$tagger.model.cluster_loops(3 , 5)
+#$tagger.model.cluster_loops(4 , 5)
+#$tagger.model.cluster_loops(5 , 5)
+#$tagger.model.cluster_loops(6 , 5)
+#$tagger.model.cluster_loops(7 , 5)
+#$tagger.model.cluster_loops(8 , 5)
+#$tagger.model.cluster_loops(9 , 5)
+#$tagger.model.cluster_loops(10, 5)
+#$tagger.model.cluster_loops(11, 5)
 
 #binding.pry
 #$tagger.model.cluster_loops(1)

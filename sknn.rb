@@ -24,7 +24,7 @@ OptionParser.new do |opts|
   end
 
   opts.on("-cN", "--cluster=N", "Perform clustering with num. of clusters = N") do |n|
-    options[:cluster] = n
+    options[:cluster] = n.to_i
   end
 
 

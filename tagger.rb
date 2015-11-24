@@ -126,6 +126,8 @@ module SkNN
         end
       end
 
+      #@model.graph.render
+
       dump = @model.dump
 
       File.write(model_file, dump)
@@ -140,6 +142,8 @@ module SkNN
         pp = Preproc.new
         pp.td_norm(td)
       end
+
+      #@model.graph.render
 
 
       td.data.map do |num, td_seq|
