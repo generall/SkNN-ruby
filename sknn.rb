@@ -28,13 +28,17 @@ OptionParser.new do |opts|
   end
 
 
-  opts.on("-n", "--normalize", "Perform centring & scaling",  "(WARN: both, learn and test data should be normalized)") do
+  opts.on("-n", "--normalize", "Perform centring & scaling",  "(WARN: both, learn and test data should be normalized)" , "External normalization recomended") do
     options[:norm] = true
   end
 
   opts.on("-o", "--output=FILE", "Write output to FILE (override). STDOUT if not specified.") do |file|
     options[:to_file] = true
     options[:output_fname] = file
+  end
+
+  opts.on("-k", "--k-knn=K", "K param to kNN algorithm.") do |k|
+    options[:k] = k
   end
 
 end.parse!
@@ -47,7 +51,8 @@ if options[:learn] then
 end
 
 if options[:exec] then
-	res = tagger.classify(ARGV[0])
+  k = options[:k] || 1
+	res = tagger.classify(ARGV[0], k)
 	output = res.map{|x| x.join("\n")}.join("\n")
 	if options[:to_file] then
 		File.write(options[:output_fname],output)

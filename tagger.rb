@@ -21,7 +21,7 @@ module SkNN
       @model.learn(fname)
     end
 
-    def viretbi(sequence)
+    def viretbi(sequence, k = 1)
       # TODO: Add path saving
       v = []
       path = []
@@ -53,12 +53,12 @@ module SkNN
                 end
               else
                 knn = KNN.new(ds.enum(vertex: next_vertex))
-                nearest = knn.nearest_neighbours(object, 1)
+                nearest = knn.nearest_neighbours(object, k)
                 if nearest.size == 0
                   next
                 else
                   nearest_object = ds.vertex_objects[next_vertex][nearest[0][0]]
-                  obj_dist = nearest[0][1]
+                  obj_dist = nearest.reduce(0){ |sum, x| sum + x[1]} / nearest.size.to_f # calc average dist
                 end
               end
               if !obj_dist
@@ -83,8 +83,8 @@ module SkNN
     end
 
 
-    def tagg(data)
-      v, path = viretbi([:init] + data + [:end] )
+    def tagg(data, k)
+      v, path = viretbi([:init] + data + [:end], k)
       curr_node = 0
       output   = []
       vertices = []
@@ -101,8 +101,8 @@ module SkNN
       return [output, vertices, nearest]
     end
 
-    def tag(data)
-      output, vertices, nearest = tagg(data)
+    def tag(data, k = 1)
+      output, vertices, nearest = tagg(data, k)
       return output[1..-2]
     end
 
@@ -134,7 +134,7 @@ module SkNN
 
     end
 
-    def classify(test_file, model_file = "model.dat", do_norm = true)
+    def classify(test_file, model_file = "model.dat", do_norm = true, k = 1)
       @model = Model.load( File.read( model_file ) )
       td = TargetData.new(test_file)
 
@@ -147,7 +147,7 @@ module SkNN
 
 
       td.data.map do |num, td_seq|
-        tag(td_seq)
+        tag(td_seq, k)
       end
 
     end
@@ -169,7 +169,7 @@ module SkNN
     #tagger.model.graph.render
 
     #exit 0
-    res = tagger.classify(ARGV[0])
+    res = tagger.classify(ARGV[0], "model.dat", true, 3).map{|x| x[0]}
 
 
     ethalon = ["s0", "s0", "s0", "s0", "s1", "s1", "s1", "s1", "s2", "s2", "s2", "s2", "s3", "s3", "s3", "s3", "s4", "s4", "s4", "s4", "s5", "s5", "s5", "s5", "s6", "s6", "s6", "s6", "s7", "s7", "s7", "s7", "s8", "s8", "s8", "s8", "s9", "s9"]
