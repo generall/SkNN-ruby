@@ -52,11 +52,11 @@ end
 
 if options[:exec] then
   k = options[:k] || 1
-	res = tagger.classify(ARGV[0], k)
-	output = res.map{|x| x.join("\n")}.join("\n")
-	if options[:to_file] then
-		File.write(options[:output_fname],output)
-	else
-		print output
-	end
+  res = tagger.classify(ARGV[0],  options[:model], options[:norm], k)
+  output = res.map{|x| x.join("\n")}.join("\n\n")
+  if options[:to_file] then
+    File.write(options[:output_fname],output)
+  else
+    print output
+  end
 end
