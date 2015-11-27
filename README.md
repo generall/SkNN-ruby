@@ -16,5 +16,5 @@ ruby sknn.rb -l model.dat -n -c 36 data/nums/*
 ```
 ## Execute classification
 ```
-ruby sknn.rb -x model.dat -o result.txt data/light_num_test.csv
+ruby sknn.rb -x model.dat -n -o result.txt data/light_num_test.csv
 ```
