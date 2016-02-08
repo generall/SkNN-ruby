@@ -1,0 +1,7 @@
+*.swp
+tags
+*.dat
+*.vim
+Gemfile.lock
+*.gz
+
