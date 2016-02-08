@@ -10,11 +10,10 @@ bundle install
 ## Learn model
 
 Example of learning pen written digits from http://archive.ics.uci.edu/ml/datasets/UJI+Pen+Characters
-Use normalization `-n` and clustering `-c 36`
 ```
-ruby sknn.rb -l model.dat -n -c 36 data/nums/*
+ruby sknn.rb -l model.dat data/nums/*
 ```
 ## Execute classification
 ```
-ruby sknn.rb -x model.dat -n -o result.txt data/light_num_test.csv
+ruby sknn.rb -x model.dat -o result.txt data/light_num_test.csv
 ```
