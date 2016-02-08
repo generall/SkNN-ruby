@@ -37,6 +37,7 @@ class Reader
 end
 
 class CSVReader < Reader
+  attr_accessor :schema
 
   def initialize(fname, schema = DefaultCSVSchema.new)
     super(fname)
@@ -64,6 +65,54 @@ class Schema
   end
 end
 
+class MapCSVSchema < Schema
+  attr_accessor :schema
+  def initialize(mapping)
+    @mapping = mapping
+    @row_size = nil
+    @schema = nil
+  end
+
+  def try_numeric(val)
+    Integer(val) rescue Float(val) rescue val
+  end
+
+  def remap(row)
+    return nil if row.size == 0
+    if !@row_size
+      @row_size = row.size 
+    elsif @row_size != row.size
+      binding.pry
+      raise "Wrong row size"
+    end
+    
+    output = row[@mapping[:output]] rescue nil
+    label  = row[@mapping[:label ]] rescue nil
+    values = []
+    if @mapping[:values]
+      if @mapping[:values].class == Array
+        @mapping[:values].each do |idx|
+          values.push try_numeric(row[idx])
+        end
+      else
+        row[@mapping[:values]].each do |x|
+          values.push try_numeric(x)
+        end
+      end
+    else
+      not_values_indexes = [@mapping[:output], @mapping[:label]].to_set
+      row.each.with_index do |x, i|
+        values.push try_numeric(x) if !not_values_indexes.include? i
+      end
+    end
+    if !@schema
+      @schema = values.map.with_index { |x,i| i }.to_set
+    end
+    { :label => label, :output => output, :values => values }
+  end
+end
+
+# deprecated
 class DefaultCSVSchema < Schema
   def initialize
     @row_size = nil
@@ -81,7 +130,7 @@ class DefaultCSVSchema < Schema
     row[0..-2].each.with_index do |val, index|
       features[index] = Integer(val) rescue val
     end
-    tag= Integer(row.last) rescue row.last
+    tag = Integer(row.last) rescue row.last
     res = {:tag => tag, :features => features}
   end
 end

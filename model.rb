@@ -8,43 +8,62 @@ require 'json'
 require 'k_means'
 
 
-require_relative 'reader.rb'
-require_relative 'dataset.rb'
+require_relative 'reader'
+require_relative 'dataset'
+require_relative 'loader'
 
 # module for model of Structured kNN sequence tagger
 module SkNN
-  # TODO remove
+
+  class Node
+    attr_accessor :dataset, :label, :output, :k, :searchers, :distance_function
+
+    def initialize()
+      @k = 1
+      @dataset = Dataset.new
+      @label = nil
+      @output = nil
+      @searchers = {} # Search objects here (Linear or some kind of tree (VP, R, e.t.c.))
+      @distance_function = nil
+    end
+
+    def add_obj(seq_obj, seq)
+      @dataset.add_seq_obj(seq_obj, seq)
+      # add object somewhere else
+    end
+
+    def inspect
+      "<Node: [#{@label}] #{@output}>"
+    end
+
+    def remove_default_proc!
+      @dataset.remove_default_proc!
+    end
+
+    def to_s
+      inspect
+    end
+  end
+
+
   # Graph of the model
-  class ModelGraph
-    attr_accessor :graph, :rev_graph
-    def initialize
-      @graph = RGL::DirectedAdjacencyGraph.new
-      @rev_graph = RGL::DirectedAdjacencyGraph.new
-    end
-
+  class ModelGraph < RGL::DirectedAdjacencyGraph
     def render(fname = "graph.png")
-      @graph.write_to_graphic_file('png')
+      write_to_graphic_file('png')
     end
-
-    def add_edge(a, b)
-      graph.add_edge(a, b)
-      rev_graph.add_edge(b, a)
-    end
-
   end
 
   # Model class
   class Model
-    attr_accessor :label_vertex_map ,:output_vertex_map, :vertex_output_map ,:vertex_dataset ,:graph ,:curr_vertex ,:seq_n, :seq_objects
+    attr_accessor :graph, :labels, :outputs, :init_node, :end_node
 
+    def node(label)
+      return @label_to_node[label]
+    end
 
     def dump()
-      @label_vertex_map.default_proc = nil
-      @output_vertex_map.default_proc = nil
-      @vertex_output_map.default_proc = nil
-      @vertex_dataset.default_proc = nil
-      @seq_objects.default_proc = nil
-      @vertex_dataset.values.each {|ds| ds.remove_default_proc!}
+      @label_to_node.each {|label, node| node.remove_default_proc!}
+      @label_to_node.default = nil
       return Marshal.dump(self)
     end
 
@@ -53,54 +72,36 @@ module SkNN
     end
 
     def initialize
-      @label_vertex_map = Hash.new { |hash, key| hash[key] = hash.size }
-      @output_vertex_map = Hash.new { |hash, key| hash[key] = Set.new }
-      @vertex_output_map = Hash.new { |hash, key| hash[key] = Set.new }
-      @vertex_dataset = Hash.new { |hash, key| hash[key] = Dataset.new }
-      @seq_objects = Hash.new { |hash, key| hash[key] = Array.new }
-      @graph = ModelGraph.new
+      init_label = :init
+      end_label  = :end
 
-      @graph.graph.add_vertex(0)
-      @graph.graph.add_vertex(1)
-      @label_vertex_map[:end]
-      @label_vertex_map[:init]
-      @vertex_output_map[:init]
-      @curr_vertex = 1
+      @init_node = Node.new
+      @init_node.label = init_label
+      @end_node = Node.new
+      @end_node.label = end_label
+
+      @label_to_node = Hash.new
+      @labels = Set.new
+      @outputs = Set.new
+      @current_node = @init_node
+      @graph = ModelGraph.new
+      @graph.add_vertex(@init_node)
+      @graph.add_vertex(@end_node)
+      @label_to_node[init_label] = @init_node
+      @label_to_node[end_label ] = @end_node
+
       @seq_n = 0
     end
 
-    def get_vertex(label)
-      return @label_vertex_map[label]
-    end
-
-    def get_label(vertex)
-      return @label_vertex_map.select {|a,b| b == vertex}.first.first
-    end
-
-
-    def enum(selector = nil)
-      return Enumerator.new do |y|
-        if selector == nil
-          @vertex_dataset.values.uniq.each do |dataset|
-            dataset.enum().to_a.uniq.each do |row|
-              y << row
-            end
-          end
-        else
-          raise "Not implemented"
-        end
-      end
-    end
-
     def get_graph_map
-      nodes = @graph.graph.vertices.map do |vert|
+      nodes = @graph.vertices.map do |vert|
         {
           id: vert,
           name: get_label(vert),
           value: 1
         }
       end
-      links = @graph.graph.edges.map do |edge|
+      links = @graph.edges.map do |edge|
         {
           source: edge.source,
           target: edge.target
@@ -109,125 +110,48 @@ module SkNN
       return { nodes: nodes,
                edges: links.select{ |x| x[:source] != x[:target] },
                loops: links.select{ |x| x[:source] == x[:target] }
-               }
+      }
     end
 
-    def cluster_loops(vertex, centroids = 2)
-      dataset = @vertex_dataset[vertex]
-      data = dataset.enum(vertex: vertex).map{|x| x}
-
-      objects = dataset.vertex_objects[vertex]
-
-      # customize clusters here
-      kmeans = KMeans.new(data, :centroids => centroids, :distance_measure => :euclidean_distance)
-
-      clusters = kmeans.view
-      # create #{centroids} new vertexes, which will have same external links as original one
-      # rewrite dataset
-      # => rewrite vertexes
-      # => repack
-      # assign dataset and links
-
-      adj_vert = graph.graph.adjacent_vertices(0) - [vertex]
-      output = @vertex_output_map[vertex]
-      label = get_label(vertex)
-
-      vertices = []
-      datasets = {}
-
-      clusters.each.with_index do |cluster, idx|
-        cl_label  = "#{label}_#{idx}"
-        cl_vertex = @graph.graph.vertices.count
-        @label_vertex_map[cl_label] = cl_vertex
-        output.each do |tag|
-          @output_vertex_map[tag].add cl_vertex
-          @vertex_output_map[cl_vertex].add tag
-        end
-        @vertex_output_map[vertex] = output
-        vertices.push cl_vertex
-
-        # naive separation, make better in future
-
-        cluster.each do |elem_idx|
-          objects[elem_idx].props[:vertex] = cl_vertex
-        end
-        vertices.push cl_vertex
-        cl_dataset = Dataset.new
-        cl_dataset.schema = dataset.schema
-        datasets[cl_vertex] = cl_dataset
-        @graph.graph.add_vertex(cl_vertex)
+    def learn(dataset)
+      dataset.sequence_objects.each do |num, seq|
+        process_sequence(seq)
       end
+    end
 
 
-      # initial A translation is not in dataset
+    # sequence is Array of Sequence object (or Enumerator)
+    def process_sequence(sequence)
+      @current_node = @init_node
+      sequence.each do |instance|
+        next_label = instance.label
+        next_node = @label_to_node[next_label]
+        if !next_node
+          next_node = Node.new
+          next_node.label = next_label
+          next_node.output = instance.output
+          @label_to_node[next_label] = next_node
+        end
+        @labels.add next_label
+        @outputs.add instance.output
+        @current_node.add_obj(instance, @seq_n)
+        @graph.add_edge(@current_node, next_node)
+        @current_node = next_node
+      end
+      @graph.add_edge(@current_node, @end_node)
+      @seq_n += 1;
+    end
 
-      # -> A
-      # => A_0
-      # => A_0
-      # => A_1
-      # => B
-      dataset.objects.each do |obj|
-        if obj.prev
-          prev_vertex = obj.prev.props[:vertex]
-          cl_vertex = obj.props[:vertex]
-
-          if vertices.include?(prev_vertex)
-            # arived from new vertex
-            cl_dataset = datasets[prev_vertex]
-            cl_dataset.objects.push(obj)
-            cl_dataset.vertex_objects[cl_vertex].push(obj)
-            cl_dataset.sequence_objects[obj.props[:seq]].push(obj)
-            dataset.vertex_objects[cl_vertex].push(obj)
-            @graph.add_edge(prev_vertex, cl_vertex)
-          end
-
-          if prev_vertex == vertex
-            @graph.add_edge(prev_vertex, cl_vertex)
-          end
-
+    def init_nodes(k, constructor)
+      @label_to_node.each do |label, node|
+        node.k = k
+        constructor.construct_distance_function(node)
+        node.dataset.vertex_objects.each do |key, subset|
+          constructor.construct_searcher(key, subset, node, self)
         end
       end
-
-      vertices.each do |vert|
-        @vertex_dataset[vert] = datasets[vert]
-      end
-
-      # do not link to self anymore
-      dataset.vertex_objects.delete(vertex)
-      graph.graph.remove_edge(vertex, vertex)
-
     end
 
-    def learn(fname)
-      @curr_vertex = 1
-      CSVReader.new(fname).read_stream.each { |x| process_row(x) }
-      @curr_vertex = 1
-      @seq_n += 1
-    end
-
-    def process_row(row)
-      if row == nil
-        @graph.add_edge(@curr_vertex, 0)
-        # add go-to-end signal
-        @vertex_dataset[@curr_vertex].add_obj(0, :end, {}, @seq_n)
-        @curr_vertex = 1
-        @seq_n += 1
-      else
-        tag    = row[:tag]
-        values = row[:features]
-
-        vertex = @label_vertex_map[tag]
-
-        # vertex to output is many to many
-        @output_vertex_map[tag   ].add vertex
-        @vertex_output_map[vertex].add tag
-
-        @graph.add_edge(@curr_vertex, vertex)
-        obj = @vertex_dataset[@curr_vertex].add_obj(vertex, tag, values, @seq_n)
-        @seq_objects[@seq_n].push obj
-        @curr_vertex = vertex
-      end
-    end
   end
 
 end

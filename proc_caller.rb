@@ -2,18 +2,17 @@ require 'pry'
 
 def foo(&block)
 	x = 7
-	block.call(x)
+	yield x,8
 end
 
 class Dist
-
 	def set_param(p)
 		@z = p
 	end
 
 	def metric_foo
-		Proc.new do |x| 
-			p "proc #{@z}: x" 
+		Proc.new do |x,y| 
+			p "proc #{@z}: #{x},#{y}" 
 		end
 	end
 end

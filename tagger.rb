@@ -1,10 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
-require 'knn'
 
-
-require_relative 'model.rb'
-require_relative 'preprocessor.rb'
+require_relative 'model'
 
 require 'ruby-prof'
 
@@ -18,171 +15,150 @@ module SkNN
     end
 
     def learn(fname)
-      @model.learn(fname)
+      @loader = CSVLoader.new
+      ds = @loader.load(fname)
+      @model.learn(ds)
     end
 
-    def viretbi(sequence, k = 1, measure = :euclidean_distance)
-      # TODO: Add path saving
+    def learn_from_dataset(dataset)
+      @model.learn(dataset)
+    end
+
+    def init_nodes(distance_class, searcher_class, k)
+      @config = NodeConstructorTemplate.new(distance_class, searcher_class)
+      @model.init_nodes(k, @config)
+    end
+
+    # +nearests+ is [ [distance, object], ... ]
+    # can be replaced with wighted distance
+    def distance_agregation(nearests)
+      sum = 0.0
+      nearests.each do |distance, object|
+        sum += distance
+      end
+      return sum
+    end
+
+    def viretbi(sequence)
       v = []
       path = []
 
       v << Hash.new { |hash, key| hash[key] = Float::INFINITY }
 
-      v.last[1] = 0 # at fitst step only :init (1) vertex is accessible with dist = 0
+      v.last[model.init_node] = 0 # at fitst step only :init (1) vertex is accessible with dist = 0
 
       sequence.each.with_index do |object, idx|
         prev = v.last
-        curr = Hash.new { |hash, key| hash[key] = Float::INFINITY }
-        curr_path = Hash.new { |hash, key| hash[key] = nil }
-        nearest_v = Hash.new { |hash, key| hash[key] = nil }
+        current_disnatces = Hash.new { |hash, key| hash[key] = Float::INFINITY }
+        current_path = Hash.new { |hash, key| hash[key] = nil }
+        
 
-        # determine all accesible vertex on step idx
-        accesible_vertecies = Set.new
-        prev.each do |vertex, dist|
+        # iterate all reached at `k-1` atep nodes 
+        prev.each do |node, dist|
           if dist != Float::INFINITY
-            ds = @model.vertex_dataset[vertex]
-            @model.graph.graph.adjacent_vertices(vertex).each do |next_vertex|
-              nearest_object = nil
-              #p "#{vertex} -> #{next_vertex}"
-              if object.class == Symbol
-                case object
-                when :init
-                  obj_dist = 0
-                when :end
-                  obj_dist = @model.get_label(next_vertex) == :end ? 0 : Float::INFINITY
-                end
+            searchers = node.searchers
+            @model.graph.adjacent_vertices(node).each do |next_node|
+              # calculating node -> next_node distance
+              # and compare it with all distances to next_node on this step
+              # save the shortest one
+              nearest_objects = nil
+              next_label = next_node.label
+              searcher = searchers[next_label]
+              local_distance = 0
+              if searcher # if next_label == :end
+                nearest_objects = searcher.find_k_nearest(object, node.k) rescue binding.pry
+                local_distance = distance_agregation(nearest_objects)
               else
-                if measure.class == Symbol
-                  knn = KNN.new(ds.enum(vertex: next_vertex), :distance_measure => measure)
-                else
-                  knn = KNN.new(ds.enum(vertex: next_vertex)){ |x,y| measure.call(x,y) }
-                end
-                nearest = knn.nearest_neighbours(object, k)
-                if nearest.size == 0
-                  next
-                else
-                  nearest_object = ds.vertex_objects[next_vertex][nearest[0][0]]
-                  obj_dist = nearest.reduce(0){ |sum, x| sum + x[1]} / nearest.size.to_f # calc average dist
-                end
+                local_distance = Float::INFINITY
               end
-              if !obj_dist
-                binding.pry # something goes wrong
-              end
-              next if obj_dist == Float::INFINITY
-              d = dist + obj_dist
-              if d < curr[next_vertex]
-                curr[next_vertex] = d
-                curr_path[next_vertex] = [vertex, nearest_object]
+              # p "#{node} --> #{next_node}: #{object}(#{next_label}) ## #{nearest_objects}  =>  #{local_distance}"
+              next if local_distance == Float::INFINITY
+              d = dist + local_distance
+              if d < current_disnatces[next_node]
+                current_disnatces[next_node] = d
+                current_path[next_node] = [node, nearest_objects]
               end
             end
           end
         end
+        v << current_disnatces
+        path << current_path
+      end
 
-
-        v << curr
-        path << curr_path
+      # do not calc distances for pathes no ended with +end_node+
+      path.last.each do |last_node, prev_node|
+        if !@model.graph.has_edge?(last_node, @model.end_node)
+          v.last[last_node] = Float::INFINITY
+        end
       end
 
       return [v, path]
     end
 
 
-    def tagg(data, k, measure = :euclidean_distance)
-      v, path = viretbi([:init] + data + [:end], k, measure)
-      curr_node = 0
-      output   = []
-      vertices = []
-      nearest  = []
-      path.reverse.each do |l|
-        curr_node, near = l[curr_node]
-        vertices.push curr_node
-        nearest.push near
-        output.push @model.vertex_output_map[curr_node].first rescue "wtf"
+    def tagg(data)
+      res = []
+      distance, path = viretbi(data)
+      last_path  = path.pop
+      last_dists = distance.pop
+      closest_key = last_dists.min_by{|node, dist| dist}.first
+      
+      node = closest_key
+      last_node, nearest = last_path[node]
+
+      output = node.output
+      res.push [output, node, nearest]
+
+      while !path.empty?
+        node = last_node
+        last_path  = path.pop
+        last_dists = distance.pop
+        last_node, nearest = last_path[node]
+        output = node.output
+        res.push [output, node, nearest]
       end
-      vertices.reverse!
-      nearest.reverse!
-      output.reverse!
-      return [output, vertices, nearest]
+      res.reverse
+    rescue Exception => e
+      binding.pry
     end
 
-    def tag(data, k = 1, measure = :euclidean_distance)
-      output, vertices, nearest = tagg(data, k, measure)
-      return output[1..-2]
+    def tag(dataset)
+      dataset.sequence_objects.map do |label, seq|
+        tagg(seq).map(&:first)
+      end
+    end
+
+    def tag!(dataset)
+      dataset.sequence_objects.each do |label, seq|
+        tags = tagg(seq)
+        tags.each.with_index do |res,i|
+          seq[i].output = res[1].output
+          seq[i].label  = res[1].label
+        end
+      end
     end
 
 
-    def make_model(files, model_file = "model.dat", do_norm = true, centroids = 5)
+    def make_model(files, searcher, distance, model_file = "model.dat", k = 1)
       
       files.each do |fname|
         learn(fname)
       end
+      
+      #default config for CLI
 
-      if do_norm
-        pp = Preproc.new
-        pp.seq_normalization(@model)
-      end
-
-      nodes = @model.vertex_dataset.keys.sort
-
-      if centroids
-        nodes[1..-1].each do |vertex|
-          @model.cluster_loops(vertex , centroids)
-        end
-      end
-
-      #@model.graph.render
+      init_nodes(distance, searcher, k)
 
       dump = @model.dump
 
       File.write(model_file, dump)
-
     end
 
-    def classify(test_file, model_file = "model.dat", do_norm = true, k = 1, measure = :euclidean_distance)
+    def classify(test_file, model_file = "model.dat")
       @model = Model.load( File.read( model_file ) )
-      td = TargetData.new(test_file)
-
-      if do_norm
-        pp = Preproc.new
-        pp.td_norm(td)
-      end
-
-      #@model.graph.render
-
-
-      td.data.map do |num, td_seq|
-        tag(td_seq, k, measure)
-      end
-
+      loader = CSVLoader.new
+      dataset = loader.load_test(test_file)
+      tag(dataset)
     end
-
   end
-
-
-  if __FILE__ == $PROGRAM_NAME
-
-
-    tagger = Tagger.new
-    #tagger.learn(ARGV[0])
-    #model = tagger.model
-    #model.cluster_loops(2)
-    #td = TargetData.new("data/pen_test.csv")
-    #v, vertices, nearest = tagger.tagg(td.data[0])
-    #pp = Preproc.new
-    #tagger.make_model(ARGV, "model.dat", true, 36)
-    #tagger.model.graph.render
-
-    #exit 0
-    res = tagger.classify(ARGV[0], "model.dat", true, 1, :euclidean_distance).map{|x| x[0]}
-
-
-    ethalon = ["s0", "s0", "s0", "s0", "s1", "s1", "s1", "s1", "s2", "s2", "s2", "s2", "s3", "s3", "s3", "s3", "s4", "s4", "s4", "s4", "s5", "s5", "s5", "s5", "s6", "s6", "s6", "s6", "s7", "s7", "s7", "s7", "s8", "s8", "s8", "s8", "s9", "s9"]
-    
-    p res
-
-    err = res.zip(ethalon).select{|x, y| x != y}
-
-    binding.pry
-  end
-
 end
