@@ -160,7 +160,56 @@ class ReaderTest < Test::Unit::TestCase
     
     @tagger = Tagger.new
     res = @tagger.classify("../data/test_pen_a.csv")
-    binding.pry
+  end
+
+
+  def test_initialized_distance
+    learn = [
+      [
+        {:values => [:a, :a, :a], :label => :l1},
+        {:values => [:a, :a, :a], :label => :l1}
+      ],
+      [
+        {:values => [:a, :a, :a], :label => :l1},
+        {:values => [:a, :a, :b], :label => :l1}
+      ],
+      [
+        {:values => [:a, :a, :a], :label => :l1},
+        {:values => [:a, :a, :c], :label => :l1}
+      ],
+      [
+        {:values => [:a, :a, :a], :label => :l1},
+        {:values => [:a, :b, :d], :label => :l2}
+      ],
+      [
+        {:values => [:a, :a, :a], :label => :l1},
+        {:values => [:a, :b, :e], :label => :l2}
+      ],
+      [
+        {:values => [:a, :a, :a], :label => :l1},
+        {:values => [:a, :c, :f], :label => :l3}
+      ],
+      [
+        {:values => [:a, :a, :a], :label => :l1},
+        {:values => [:a, :c, :g], :label => :l3}
+      ]
+    ]
+
+    @ld = ArrayLoader.new()
+    @tagger = Tagger.new
+
+    distClass = Measurable::WeightedOverlap
+    dataset = @ld.load(learn)
+    @tagger.learn_from_dataset(dataset)
+    model = @tagger.model
+
+    di = dataset.get_data_iterator
+
+    @tagger.init_nodes(distClass, KNN, 1, :init_with_nodes => true)
+    w = @tagger.model.node(:l1).distance_function.weights
+    assert_in_delta(w[0], 0.0)
+    assert_in_delta(w[1], 1.5, 0.1)
+    assert_in_delta(w[2], w[1])
   end
 end
 

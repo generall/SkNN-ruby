@@ -72,7 +72,8 @@ module SkNN
 
     def construct_distance_function(node)
       if @init_with_nodes
-        node.distance_function = @distance_function_class.new(node.dataset.objects)
+        ds = node.dataset
+        node.distance_function = @distance_function_class.new(ds.get_data_iterator, ds.get_label_iterator)
       else
         node.distance_function = @distance_function_class.new
       end

@@ -24,8 +24,8 @@ module SkNN
       @model.learn(dataset)
     end
 
-    def init_nodes(distance_class, searcher_class, k)
-      @config = NodeConstructorTemplate.new(distance_class, searcher_class)
+    def init_nodes(distance_class, searcher_class, k, options = {})
+      @config = NodeConstructorTemplate.new(distance_class, searcher_class, options)
       @model.init_nodes(k, @config)
     end
 
@@ -139,7 +139,7 @@ module SkNN
     end
 
 
-    def make_model(files, searcher, distance, model_file = "model.dat", k = 1)
+    def make_model(files, searcher, distance, model_file = "model.dat", k = 1, options = {})
       
       files.each do |fname|
         learn(fname)
@@ -147,7 +147,7 @@ module SkNN
       
       #default config for CLI
 
-      init_nodes(distance, searcher, k)
+      init_nodes(distance, searcher, k, options)
 
       dump = @model.dump
 
