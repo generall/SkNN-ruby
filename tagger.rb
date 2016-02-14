@@ -3,8 +3,6 @@ require 'bundler/setup'
 
 require_relative 'model'
 
-require 'ruby-prof'
-
 module SkNN
   class Tagger
 

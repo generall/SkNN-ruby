@@ -5,7 +5,6 @@ require 'rgl/adjacency'
 require 'rgl/dot'
 require 'set'
 require 'json'
-require 'k_means'
 
 
 require_relative 'reader'
