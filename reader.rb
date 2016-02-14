@@ -57,6 +57,22 @@ class CSVReader < Reader
   end
 end
 
+class SSVReader < Reader
+  attr_accessor :schema
+  def initialize(fname, schema = DefaultCSVSchema.new, delim = /\s/)
+    super(fname)
+    @schema = schema
+    @delim = delim
+  end
+  def read_stream()
+    if @schema
+      File.open(@fname).lazy.map do |line|
+        @schema.remap(line.strip.split(@delim))
+      end.each
+    end
+  end
+end
+
 class Schema
   def initialize
   end

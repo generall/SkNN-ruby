@@ -99,6 +99,15 @@ module SkNN
       @sequence_objects[seq].push seq_obj
       @objects.push seq_obj
     end
+
+    def dump_sv(delim = "\t")
+      @sequence_objects.map do |key, seq|
+        seq.map do |inst|
+          row = inst.coordinates + [inst.label]
+          row.join(delim)
+        end.join("\n")
+      end.join("\n\n")
+    end
   end
 
   # element of sequence

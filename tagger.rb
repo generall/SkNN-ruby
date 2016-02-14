@@ -12,10 +12,11 @@ module SkNN
 
     def initialize
       @model = Model.new
+      @statistics = Hash.new(0)
     end
 
-    def learn(fname)
-      @loader = CSVLoader.new
+    def learn(fname, reader = CSVReader)
+      @loader = C45Loader.new(reader)
       ds = @loader.load(fname)
       @model.learn(ds)
     end
@@ -66,7 +67,8 @@ module SkNN
               searcher = searchers[next_label]
               local_distance = 0
               if searcher # if next_label == :end
-                nearest_objects = searcher.find_k_nearest(object, node.k) rescue binding.pry
+                @statistics[:searcher_call] += 1;
+                nearest_objects = searcher.find_k_nearest(object, node.k)
                 local_distance = distance_agregation(nearest_objects)
               else
                 local_distance = Float::INFINITY
@@ -129,12 +131,16 @@ module SkNN
     end
 
     def tag!(dataset)
+      sz = dataset.sequence_objects.size
+      i = 0;
       dataset.sequence_objects.each do |label, seq|
         tags = tagg(seq)
         tags.each.with_index do |res,i|
           seq[i].output = res[1].output
           seq[i].label  = res[1].label
         end
+        i += 1;
+        print "#{i} of #{sz}\r"
       end
     end
 
@@ -142,7 +148,7 @@ module SkNN
     def make_model(files, searcher, distance, model_file = "model.dat", k = 1, options = {})
       
       files.each do |fname|
-        learn(fname)
+        learn(fname, options[:reader] || CSVReader)
       end
       
       #default config for CLI
@@ -156,7 +162,7 @@ module SkNN
 
     def classify(test_file, model_file = "model.dat")
       @model = Model.load( File.read( model_file ) )
-      loader = CSVLoader.new
+      loader = C45Loader.new
       dataset = loader.load_test(test_file)
       tag(dataset)
     end

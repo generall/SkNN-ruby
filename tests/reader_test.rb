@@ -24,7 +24,7 @@ end
 
 class LoaderTest < Test::Unit::TestCase
   def setup
-    @loader = SkNN::CSVLoader.new
+    @loader = SkNN::C45Loader.new
   end
 
   def test_load
@@ -34,9 +34,37 @@ class LoaderTest < Test::Unit::TestCase
     model = SkNN::Model.new
     model.learn(ds) # test for no error, graph building test is in model_test
     assert_equal(model.node("state_1").output, "state_1")
-    binding.pry
   end
 
+
+  def test_feature_expand
+    @ld = SkNN::ArrayLoader.new
+
+    learn = [
+      [
+        {:values => [1  ], :label => :l1},
+        {:values => [100], :label => :l2},
+        {:values => [10 ], :label => :l3},
+        {:values => [11 ], :label => :l3}
+      ],
+      [
+        {:values => [1  ], :label => :l1},
+        {:values => [50 ], :label => :l4},
+        {:values => [21 ], :label => :l5},
+        {:values => [20 ], :label => :l5}
+      ],
+      [
+        {:values => [1], :label => :l1},
+        {:values => [2], :label => :l1},
+        {:values => [3], :label => :l1},
+        {:values => [4], :label => :l1},
+        {:values => [5], :label => :l1}
+      ]
+    ]
+
+    dataset = @ld.load(learn)
+    SkNN::FeatureExpander.expand_sequence(dataset, 2)
+  end
 end
 =begin
 class ClusterTest < Test::Unit::TestCase

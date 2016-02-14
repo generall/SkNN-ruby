@@ -5,8 +5,11 @@ require_relative 'reader.rb'
 require_relative 'dataset.rb'
 
 module SkNN
-  class CSVLoader
-    def initialize
+
+  class C45Loader
+    def initialize(reader = CSVReader, limit = Float::INFINITY)
+      @reader = reader
+      @limit = limit
     end
 
     def load_test(csv_file, mapping = { :values => (0..-1), :label => nil, :output => nil } )
@@ -18,7 +21,7 @@ module SkNN
       dataset = Dataset.new
       last = nil
       csv_schema = MapCSVSchema.new(mapping)
-      reader = CSVReader.new(csv_file, csv_schema)
+      reader = @reader.new(csv_file, csv_schema)
       reader.read_stream.each do |row|
         if row
           label  = row[:label ]
@@ -32,9 +35,31 @@ module SkNN
         else
           last = nil
           seq_n += 1
+          break if @limit < seq_n
         end
       end
       return dataset
+    end
+  end
+
+  class FeatureExpander
+    def self.expand_sequence(dataset, num)
+      dataset.sequence_objects.each do |key, seq|
+        sz = seq.size
+        for i in 0..(sz - 1) do
+          inst = seq[i]
+          f_sz = inst.props.size
+          for j in -num..num do
+            next if j == 0
+            if i + j >= 0 && i + j < sz
+              source = seq[i + j]
+              inst.props += source.props[0..(f_sz - 1)]
+            else
+              inst.props += ["nil"] * f_sz
+            end
+          end
+        end
+      end
     end
   end
 
@@ -50,7 +75,7 @@ module SkNN
           label  = row[mapping[:label ]] rescue nil
           output = row[mapping[:output]] rescue nil
           values = row[mapping[:values]]
-          
+
           so = SeqObject.new(last, label, output)
           so.props = values
           last = so
@@ -68,12 +93,13 @@ module SkNN
       @searcher_class = searcher_class
       # needs for nomalized functions or functions like MVDM
       @init_with_nodes = options[:init_with_nodes]
+      @options = options
     end
 
     def construct_distance_function(node)
       if @init_with_nodes
         ds = node.dataset
-        node.distance_function = @distance_function_class.new(ds.get_data_iterator, ds.get_label_iterator)
+        node.distance_function = @distance_function_class.new(ds.get_data_iterator, ds.get_label_iterator, @options)
       else
         node.distance_function = @distance_function_class.new
       end

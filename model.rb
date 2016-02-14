@@ -114,8 +114,12 @@ module SkNN
     end
 
     def learn(dataset)
+      sz = dataset.sequence_objects.size
+      i = 0
       dataset.sequence_objects.each do |num, seq|
         process_sequence(seq)
+        i += 1;
+        print "#{i} of #{sz}\r"
       end
     end
 
