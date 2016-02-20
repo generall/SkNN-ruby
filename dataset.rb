@@ -123,6 +123,14 @@ module SkNN
       end
     end
 
+    def size
+      coordinates.size
+    end
+
+    def [](idx)
+      coordinates[idx]
+    end
+
     def initialize(last = nil, label = nil, output = nil)
       @props = nil
       @prev = last
