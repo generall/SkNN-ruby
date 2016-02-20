@@ -117,6 +117,7 @@ module SkNN
         output = node.output
         res.push [output, node, nearest]
       end
+      binding.pry if $debug
       res.reverse
     rescue Exception => e
       binding.pry
