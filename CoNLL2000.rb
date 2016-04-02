@@ -26,10 +26,10 @@ if __FILE__ == $0
 
   if ARGV.include?("-ex")
     loader = C45Loader.new(SSVReader)
-    ds_train = loader.load(src_dir + "train.txt"      , {:values => [1], :label => -1, :output => -1} )
-    ds_test  = loader.load(src_dir + "small_test.txt" , {:values => [1], :label => -1, :output => -1} )
-    FeatureExpander.expand_sequence(ds_train, 3)
-    FeatureExpander.expand_sequence(ds_test , 3)
+    ds_train = loader.load(src_dir + "train.txt"      , {:values => [0, 1], :label => -1, :output => -1} )
+    ds_test  = loader.load(src_dir + "small_test.txt" , {:values => [0, 1], :label => -1, :output => -1} )
+    FeatureExpander.expand_sequence(ds_train, 2)
+    FeatureExpander.expand_sequence(ds_test , 2)
     File.write("train_ex.txt", ds_train.dump_sv())
     File.write("test_ex.txt" , ds_test.dump_sv())
     
@@ -47,11 +47,11 @@ if __FILE__ == $0
     data = sq1.map(&:itself)
     model = tagger.model
     binding.pry
-    res = tagger.tagg(data)
+    #res = tagger.tagg(data)
 
   else
     tagger = Tagger.new
-    tagger.make_model( [DATA_DIR + "train_ex.txt"], RTree, weighted_overlap_class, model_file, k, 
+    tagger.make_model( [DATA_DIR + "train_ex.txt"], VPTree, mvdm_class, model_file, k, 
                       :init_with_nodes => true,
                       :reader => SSVReader,
                       :ratio => true,

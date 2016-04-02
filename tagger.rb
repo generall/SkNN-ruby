@@ -99,6 +99,7 @@ module SkNN
     def tagg(data)
       res = []
       distance, path = viretbi(data)
+      binding.pry if $debug
       last_path  = path.pop
       last_dists = distance.pop
       closest_key = last_dists.min_by{|node, dist| dist}.first
@@ -117,7 +118,6 @@ module SkNN
         output = node.output
         res.push [output, node, nearest]
       end
-      binding.pry if $debug
       res.reverse
     rescue Exception => e
       binding.pry
