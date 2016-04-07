@@ -46,11 +46,15 @@ module SkNN
 
       v.last[model.init_node] = 0 # at fitst step only :init (1) vertex is accessible with dist = 0
 
+
+      max_iterations = sequence.size
+
       sequence.each.with_index do |object, idx|
         prev = v.last
         current_disnatces = Hash.new { |hash, key| hash[key] = Float::INFINITY }
         current_path = Hash.new { |hash, key| hash[key] = nil }
         
+        print "Viterbi: #{idx} of #{max_iterations}\r"
 
         # iterate all reached at `k-1` atep nodes 
         prev.each do |node, dist|
