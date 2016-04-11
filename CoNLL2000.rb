@@ -18,6 +18,7 @@ weighted_overlap_class = Measurable::WeightedOverlap
 
 #DATA_DIR="/home/generall/data/CoNLL2000/"
 DATA_DIR="./"
+SkNN_DEBUG = true
 k = 1
 model_file = "model.dat"
 

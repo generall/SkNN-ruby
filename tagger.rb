@@ -149,7 +149,8 @@ module SkNN
 
 
     def make_model(files, searcher, distance, model_file = "model.dat", k = 1, options = {})
-      
+     
+      puts "Start reading ... " if SkNN_DEBUG
       files.each do |fname|
         learn(fname, options[:reader] || CSVReader)
       end

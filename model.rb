@@ -146,12 +146,18 @@ module SkNN
     end
 
     def init_nodes(k, constructor)
+      
+      puts "Start nodes constructing: " if SkNN_DEBUG
+      total = @label_to_node.size
+      i = 0
       @label_to_node.each do |label, node|
         node.k = k
         constructor.construct_distance_function(node)
         node.dataset.vertex_objects.each do |key, subset|
           constructor.construct_searcher(key, subset, node, self)
         end
+        i += 1;
+        print "#{i} of #{total}\r" if SkNN_DEBUG
       end
     end
 
