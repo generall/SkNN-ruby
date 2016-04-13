@@ -143,7 +143,7 @@ module SkNN
           seq[i].label  = res[1].label
         end
         i += 1;
-        print "#{i} of #{sz}\r"
+        print "#{i} of #{sz}\n"
       end
     end
 

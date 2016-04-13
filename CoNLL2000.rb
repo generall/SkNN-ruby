@@ -52,7 +52,7 @@ if __FILE__ == $0
 
   else
     tagger = Tagger.new
-    tagger.make_model( [DATA_DIR + "train_ex.txt"], KNN, mvdm_class, model_file, k, 
+    tagger.make_model( [DATA_DIR + "train_ex.txt"], VPTree, weighted_overlap_class, model_file, k, 
                       :init_with_nodes => true,
                       :reader => SSVReader,
                       :ratio => true,
